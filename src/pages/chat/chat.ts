@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
+import { ProfilePage } from '../profile/profile';
+
 /*
   Generated class for the Chat page.
 
@@ -13,10 +15,18 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class ChatPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams) { }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ChatPage');
+  }
+
+  gotoProfile(): void {
+    this.navCtrl.push(ProfilePage);
+  }
+
+  sendMessage(): void {
+
   }
 
 }

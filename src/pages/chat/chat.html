@@ -1,21 +1,31 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="dark">
     <ion-title>Cat Chat</ion-title>
     <ion-buttons end>
-      <button ion-button icon-only>
+      <button ion-button icon-only (click)="gotoProfile()">
         <ion-icon name="md-settings"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content>
-<ion-list>
-  <ion-item>
-    ABC
-  </ion-item>
-  <ion-item>
-    XYZ
-  </ion-item>
-</ion-list>
+<ion-content class="home" #chat id="chat">
+  <ion-list no-lines>
+    <ion-item>
+      <ion-avatar item-left>
+        <img src="">
+      </ion-avatar>
+      <h2>Name here</h2>
+      <p>message here</p>
+    </ion-item>
+  </ion-list>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-input [(ngModel)]="chatMessage" type="text" placeholder="enter message..."></ion-input>
+    <button ion-button icon-only (click)="sendMessage()" style="position:absolute; right: 0; top: 0; margin: 0;">
+      <ion-icon name="chatbubbles"></ion-icon>
+    </button>
+  </ion-toolbar>
+</ion-footer>
